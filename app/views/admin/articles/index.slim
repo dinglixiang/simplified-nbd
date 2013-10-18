@@ -1,0 +1,19 @@
+h4
+  i.icon-list-alt
+  span.text-info =t('system.article')
+  = link_to "添加通知",new_admin_article_path, class: "pull-right"
+.tabbable
+  ul class="nav nav-tabs"
+    li class="active"
+      a href="#tab1" data-toggle="tab" 未审核
+    li 
+      a href="#tab2" data-toggle="tab" 审核通过
+    li
+      a href="#tab3" data-toggle="tab" 未通过
+  div class="tab-content"
+    div class="tab-pane active" id="tab1"
+      p 1111
+    div class="tab-pane" id="tab2"
+      p 2222
+    div class="tab-pane" id="tab3"
+      p 3333

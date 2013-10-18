@@ -1,5 +1,10 @@
 Blog::Application.routes.draw do
+  root to: "home#index"
   
+  namespace :admin do 
+    resources :articles
+  end
+  resources :articles,only: [:index,:show]
   resources :sessions
 
   # The priority is based upon order of creation:

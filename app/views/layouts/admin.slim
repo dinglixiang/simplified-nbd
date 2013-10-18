@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title= t('system.title') 
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body#body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .span12.pull-left
+            span.brand.pull-left
+              i.icon-home
+              a href= "#" title="回首页"
+                strong.text-info=t('system.title')
+            span.divider-vertical
+              ul class="nav nav-tabs nav-pills"
+                li = link_to '文章管理',admin_articles_path
+              ul class="nav pull-right" 
+                li = link_to '网站首页',root_path                  
+    .container style="margin-top:60px;"
+      .container-fluid
+        .row-fluid
+          - if flash[:notice]
+            .alert.alert-success
+              a> href="#" class="close" data-dismiss="alert" &times;
+              = flash[:notice]
+          - if flash[:alert]
+            .alert
+              a> href="#" class="close" data-dismiss="alert" &times;
+              = flash[:alert]
+          = yield
+      .footer
+        p.pull-right
+          a href="#" 回到顶端
+        p
+          |每经网 by 丁历祥 | &copy; 2013 
