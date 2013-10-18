@@ -1,7 +1,7 @@
-= simple_form_for @article,url: admin_articles_path(@article) do |f|
+= simple_form_for @article,url: admin_article_path(@article) do |f|
   = f.input :title
   = f.input :publisher
   = f.input :state
   = f.input :digest,:as => :ckeditor,:input_html => {:ckeditor => {:toolbar => 'Full'}}
   br
-  = f.submit "新建文章",class: "btn"
+  = f.submit "更新文章",class: "btn"
