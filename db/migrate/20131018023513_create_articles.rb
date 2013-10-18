@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :title
       t.text :digest
       t.string :publisher
-      t.string :state
+      t.string :state,:default => "draft"
 
       t.timestamps
     end

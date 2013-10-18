@@ -1,7 +1,10 @@
 Blog::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   root to: "home#index"
   
   namespace :admin do 
+    root to: "home#index"
     resources :articles
   end
   resources :articles,only: [:index,:show]

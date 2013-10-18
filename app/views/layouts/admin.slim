@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= t('system.title') 
+    link rel="shortcut icon" href="http://static.nbd.com.cn/favicon.ico" type="image/x-icon"
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -12,12 +13,15 @@ html
           .span12.pull-left
             span.brand.pull-left
               i.icon-home
-              a href= "#" title="回首页"
+              a href= admin_root_path title="回首页"
                 strong.text-info=t('system.title')
             span.divider-vertical
               ul class="nav nav-tabs nav-pills"
-                li = link_to '文章管理',admin_articles_path
+                li = link_to '草稿箱',admin_articles_path
+                li = link_to '已发布',admin_articles_path
+                li = link_to '垃圾箱',admin_articles_path
               ul class="nav pull-right" 
+                li = link_to '写文章',new_admin_article_path
                 li = link_to '网站首页',root_path                  
     .container style="margin-top:60px;"
       .container-fluid

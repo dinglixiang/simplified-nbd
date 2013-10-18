@@ -3,6 +3,14 @@
 
 zh_CN:
   system:
-    title: "简化版每经网"
+    title: "每经网"
     article: 文章管理
+  simple_form:
+    labels:
+      article:
+        title: 标题
+        digest: 摘要
+        publisher: 发布人
+        state: 文章状态
+
   hello: "Hello world"
