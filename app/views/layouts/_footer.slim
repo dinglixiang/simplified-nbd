@@ -1,4 +1,8 @@
 .footer_nav
-  a> href="#" data-toggle="modal" class="first" 关于我们
-  a> href="#" data-toggle="modal" 版权声明
-p Copyright © 2013 版权所有，可在github上查看源代码，欢迎指错和修改，违者不究。
+  - @blogrolls.each_with_index do |blogroll,index|
+    - index=index+1
+    - if index==1
+      = link_to blogroll.title,blogroll.url,class: "first"
+    - else
+      = link_to blogroll.title,blogroll.url
+p Copyright © 2013 版权没有，可在github上查看源代码，欢迎指错和修改，违者不究。  —  by 丁历祥.

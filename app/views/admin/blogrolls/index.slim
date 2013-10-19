@@ -1,0 +1,35 @@
+h4
+  i.icon-list-alt
+  span.text-info =t('system.blogroll')
+  a href="#myModal" data-toggle="modal" class="pull-right" 添加链接
+table class="table table-bordered table-hover"
+  thead
+    tr
+      th.index_number 序号
+      th 链接名称
+      th.span4 URL地址
+      th 操作
+  tbody
+    - @blogrolls.each_with_index do |blogroll,index|
+      tr
+        td = index=index+1
+        td = blogroll.title
+        td = link_to blogroll.url,blogroll.url,target: "_blank"
+        td 
+           = link_to "编辑", edit_admin_blogroll_path(blogroll)
+           ||
+           = link_to "删除", admin_blogroll_path(blogroll) , method: :delete, data: { confirm: '确定此操作吗？' } 
+div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  div class="modal-header"
+    button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
+    h3 id="myModalLabel" 添加友情链接
+  div class="modal-body"
+    .span4
+      = form_for :blogroll,url: admin_blogrolls_path,as: :post do |f|
+        label for="title" 链接名称
+        |
+        = f.text_field :title
+        label for="url" URL地址
+        |
+        = f.text_field :url
+        = f.submit "新建" ,class: "btn btn-primary"

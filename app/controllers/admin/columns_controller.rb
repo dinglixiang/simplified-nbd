@@ -1,6 +1,6 @@
 #encoding:utf-8
 class Admin::ColumnsController < AdminController
-	before_filter :find_column,only: [:update,:destroy]
+	before_filter :find_column,only: [:update,:edit,:destroy]
 	
 	def index
 		@columns = Column.all
@@ -17,6 +17,9 @@ class Admin::ColumnsController < AdminController
 		else
 			redirect_to admin_columns_path,notice: "添加失败."
 		end
+	end
+
+	def edit
 	end
 
 	def update

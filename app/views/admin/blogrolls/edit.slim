@@ -1,0 +1,5 @@
+= simple_form_for @blogroll,url: admin_blogroll_path(@blogroll) do |f|
+  = f.input :title
+  = f.input :url
+  br
+  = f.submit "更新",class: "btn"

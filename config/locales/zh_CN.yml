@@ -9,6 +9,7 @@ zh_CN:
     published: 已发布
     banned: 禁止发布
     column: 频道栏目
+    blogroll: 友情链接
   simple_form:
     labels:
       article:
@@ -19,5 +20,8 @@ zh_CN:
       channel:
         title: 频道名称
         link_str: URL链接
+      blogroll:
+        title: 链接名称
+        url: URL地址
 
   hello: "Hello world"
