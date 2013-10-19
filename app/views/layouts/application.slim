@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= t('system.title') 
+    link rel="shortcut icon" href="http://static.nbd.com.cn/favicon.ico" type="image/x-icon"
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body#ibody
+    .header
+      .header_bg
+      .innerCenter
+        .ad_header
+          p 锁定最热股市资讯
+        a> class="logo-stock" href="#"
+        .nav1
+          .nav_item
+            dl
+              dt
+                a> href= root_path 首页
+              dd
+                a> href= root_path 首页
+              dd
+                a> href= root_path 首页
+            dl
+              dt
+                a> href= root_path 首页
+              dd
+                a> href= root_path 首页
+              dd
+                a> href= root_path 首页
+    .wrapper
+      .innerCenter
+        .main
+          = yield

@@ -1,0 +1,11 @@
+.ntitle
+  span.brand
+    strong.text-info 股票
+br
+hr
+table
+  tbody
+    - @articles.each do |article|
+      tr
+        h4 #{article.title}
+        p #{article.created_at.strftime('%Y-%m-%d %H:%M')}
