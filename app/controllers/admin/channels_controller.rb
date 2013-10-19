@@ -1,6 +1,6 @@
 #encoding:utf-8
 class Admin::ChannelsController < AdminController
-	before_filter :find_channel,only: [:update,:edit,:destroy]
+	before_filter :find_channel,only: [:edit,:update,:destroy]
 	
 	def index
 		@channels = Channel.all
@@ -15,7 +15,7 @@ class Admin::ChannelsController < AdminController
 		if @channel.save
 			redirect_to admin_channels_path,notice: "添加成功."
 		else
-			redirect_to admin_channels_path,notice: "添加失败."
+			redirect_to admin_channels_path,alert: "添加失败."
 		end
 	end
 
@@ -26,7 +26,7 @@ class Admin::ChannelsController < AdminController
 		if @channel.update_attributes(params[:channel])
 			redirect_to admin_channels_path,notice: "更新成功."
 		else
-			redirect_to admin_channels_path,notice: "更新失败."
+			redirect_to admin_channels_path,alert: "更新失败."
 		end
 	end
 
@@ -36,7 +36,7 @@ class Admin::ChannelsController < AdminController
 	end
 
 	private
-	def find_column
+	def find_channel
 		@channel = Channel.find(params[:id])
 	end
 
