@@ -5,6 +5,9 @@ zh_CN:
   system:
     title: "每经网"
     article: 文章管理
+    draft: 草稿箱
+    published: 已发布
+    banned: 禁止发布
   simple_form:
     labels:
       article:

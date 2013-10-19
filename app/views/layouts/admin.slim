@@ -18,8 +18,8 @@ html
             span.divider-vertical
               ul class="nav nav-tabs nav-pills"
                 li = link_to '草稿箱',admin_articles_path
-                li = link_to '已发布',admin_articles_path
-                li = link_to '垃圾箱',admin_articles_path
+                li = link_to '已发布',published_admin_articles_path
+                li = link_to '垃圾箱',banned_admin_articles_path
               ul class="nav pull-right" 
                 li = link_to '写文章',new_admin_article_path
                 li = link_to '网站首页',root_path                  

@@ -5,7 +5,15 @@ Blog::Application.routes.draw do
   
   namespace :admin do 
     root to: "home#index"
-    resources :articles
+    resources :articles do
+      collection do
+        get 'published'
+        get 'banned'
+        get 'publish'
+        get 'ban'
+      end
+    end
+
   end
   resources :articles,only: [:index,:show]
   resources :sessions
