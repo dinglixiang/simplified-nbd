@@ -1,3 +1,80 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.contain {
+	margin-left: 6%;;
+	margin-right: 6%;
+}
+
+ol, ul {
+list-style: none;
+}
+
+.innerCenter a{
+  color: #3C3C3C;
+}
+
+.innerCenter a:hover{
+  color: #3C3C3C;
+}
+
+.story_bd {
+padding: 14px;
+}
+
+.articles li {
+height: 24px;
+line-height: 25px;
+overflow: hidden;
+}
+
+.articleMaterial_meta {
+color: #aaa;
+font-size: 12px;
+}
+
+.articles li.articleMaterial {
+background: none;
+padding: 0 0 10px 0;
+height: auto;
+}
+
+.articleMaterial_digest .articleMaterial_digest_3row {
+height: 60px;
+}
+
+.articleMaterial_digest p {
+overflow: hidden;
+font-size: 12px;
+line-height: 20px;
+color: #606060;
+}
+
+.footer1 {
+padding: 10px 0 20px;
+border-top: 1px solid #ddd;
+text-align: center;
+font-family: Arial, sans-serif;
+font-size: 12px;
+background-color: white;
+}
+
+.footer_nav {
+height: 30px;
+line-height: 30px;
+font-size: 13px;
+}
+
+.footer1 p {
+color: #787878;
+line-height: 30px;
+}
+
+.footer_nav a.first {
+border-left: 0;
+}
+
+.footer_nav a {
+padding: 0 10px;
+border-left: 1px solid #ccc;
+}

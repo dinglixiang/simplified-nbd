@@ -14,6 +14,8 @@ Blog::Application.routes.draw do
       end
     end
 
+    resources :columns
+    resources :channels
   end
   resources :articles,only: [:index,:show]
   resources :sessions

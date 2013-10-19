@@ -8,6 +8,7 @@ zh_CN:
     draft: 草稿箱
     published: 已发布
     banned: 禁止发布
+    column: 频道栏目
   simple_form:
     labels:
       article:
@@ -15,5 +16,8 @@ zh_CN:
         digest: 摘要
         publisher: 发布人
         state: 文章状态
+      channel:
+        title: 频道名称
+        link_str: URL链接
 
   hello: "Hello world"

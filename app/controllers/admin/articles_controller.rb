@@ -1,6 +1,6 @@
 #encoding:utf-8
 class Admin::ArticlesController < AdminController
-	before_filter :find_article,only: [:show,:update,:destroy,:publish,:ban]
+	before_filter :find_article,only: [:show,:edit,:update,:destroy,:publish,:ban]
 
 	#draft articles
 	def index
@@ -31,6 +31,9 @@ class Admin::ArticlesController < AdminController
 		else
 			redirect_to admin_articles_path,alert: "添加失败."
 		end
+	end
+
+	def edit
 	end
 
 	def update

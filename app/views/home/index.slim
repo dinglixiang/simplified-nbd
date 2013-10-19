@@ -3,9 +3,11 @@
     strong.text-info 股票
 br
 hr
-table
-  tbody
+.story_bd
+  ul.articles 
     - @articles.each do |article|
-      tr
-        h4 #{article.title}
-        p #{article.created_at.strftime('%Y-%m-%d %H:%M')}
+      li.articleMaterial
+        h4 #{link_to article.title,article_path(id: article.id)}
+        p.articleMaterial_meta #{article.created_at.strftime('%Y-%m-%d %H:%M')}
+        .articleMaterial_digest
+          p  #{article.digest.truncate(600, separator: ' ').gsub(/<\/?.*?>/,"")}

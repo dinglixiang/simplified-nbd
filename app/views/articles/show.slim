@@ -1,1 +1,12 @@
-show.slim
+br
+h3 align="center" #{@article.title}
+p align="center" 
+  |
+  a> href="http://www.nbd.com.cn" http://www.nbd.com.cn
+  | &nbsp;&nbsp;&nbsp;&nbsp;#{@article.created_at.strftime('%Y-%m-%d %H:%M')}
+  |
+  '&nbsp;&nbsp;&nbsp;&nbsp;来源：#{@article.publisher}
+.contain 
+  = @article.digest.html_safe
+br
+br
