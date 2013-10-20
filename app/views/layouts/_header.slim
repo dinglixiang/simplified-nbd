@@ -1,0 +1,23 @@
+.nav_item
+	dl
+	  dt
+	    - @channels.each do |channel|
+	      a> href="#{channel.link_str}" #{channel.title}
+	      - @columns.each do |i|
+	        dd
+	          a> href="#" #{i.title}
+.nav_item
+	dl
+	  dt
+	    a> href= root_path 首页
+	    dd
+	      a> href= root_path 首页
+	    dd
+	      a> href= root_path 首页
+	dl
+	  dt
+	    a> href= root_path 首页
+	    dd
+	      a> href= root_path 首页
+	    dd
+	      a> href= root_path 首页

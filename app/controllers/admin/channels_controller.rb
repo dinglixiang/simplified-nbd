@@ -4,6 +4,8 @@ class Admin::ChannelsController < AdminController
 	
 	def index
 		@channels = Channel.all
+		@columns = Column.all
+		#render json: Channel.last.columns
 	end
 
 	def new
@@ -23,6 +25,8 @@ class Admin::ChannelsController < AdminController
 	end
 
 	def update
+		#render json: params[:channel][:tag_list]
+		#@channel.tag_list = params[:channel][:tag_list]
 		if @channel.update_attributes(params[:channel])
 			redirect_to admin_channels_path,notice: "更新成功."
 		else
@@ -33,6 +37,12 @@ class Admin::ChannelsController < AdminController
 	def destroy
 		@channel.delete
 		redirect_to admin_channels_path,notice: "删除成功."
+	end
+
+	def add_column
+		#render json: params[:column][:title]
+
+		#redirect_to admin_channels_path,alert: "更新失败."
 	end
 
 	private

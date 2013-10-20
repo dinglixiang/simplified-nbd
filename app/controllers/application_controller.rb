@@ -4,5 +4,7 @@ class ApplicationController < ActionController::Base
 
   def find_blogrolls
   	@blogrolls = Blogroll.all
+  	@channels = Channel.all
+  	@columns = Column.all
   end
 end

@@ -4,8 +4,6 @@ div id="newColumn" class="modal hide fade" tabindex="-1" role="dialog" aria-labe
     h3 id="myModalLabel" 添加栏目
   div class="modal-body"
     .span4
-      = form_for :column,url: add_column_admin_channels_path do |f|
-        = f.select :title,Column.all.map {|c| c.title.to_s},
-                   {include_blank: false},
-                   {class: "chosen-select"}
+      = form_for :column,url: admin_columns_path,as: :post do |f|
+        = f.text_field :title
         = f.submit "新建" ,class: "btn btn-primary"

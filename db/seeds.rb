@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Blogroll.create(title: '联系我们',url: 'http://www.nbd.com.cn/contact')
+Blogroll.create(title: '免责声明',url: 'http://www.nbd.com.cn/contact')
+Blogroll.create(title: '版权声明',url: 'http://www.nbd.com.cn/contact')

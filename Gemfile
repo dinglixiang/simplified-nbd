@@ -11,6 +11,9 @@ gem 'mysql2'
 gem "ckeditor"
 gem 'slim'
 gem 'simple_form'
+gem 'acts-as-taggable-on'
+gem 'chosen-rails'
+gem 'rb-readline', '~> 0.4.2'
 #gem 'libv8'
 
 # Gems used only for assets and not required

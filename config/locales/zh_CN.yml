@@ -8,20 +8,25 @@ zh_CN:
     draft: 草稿箱
     published: 已发布
     banned: 禁止发布
-    column: 频道栏目
+    column: 栏目
+    channel: 频道
     blogroll: 友情链接
   simple_form:
     labels:
       article:
         title: 标题
         digest: 摘要
+        tag_list: 归属栏目
         publisher: 发布人
         state: 文章状态
       channel:
         title: 频道名称
         link_str: URL链接
+        tag_list: 包含栏目
       blogroll:
         title: 链接名称
         url: URL地址
+      column:
+        title: 栏目名称
 
   hello: "Hello world"

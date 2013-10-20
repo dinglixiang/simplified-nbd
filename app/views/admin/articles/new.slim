@@ -1,6 +1,7 @@
 = simple_form_for @article,url: admin_articles_path(@article) do |f|
   = f.input :title
   = f.input :publisher
+  = f.input :column_list
   = f.input :state,as: :hidden
   = f.input :digest,:as => :ckeditor,:input_html => {:ckeditor => {:toolbar => 'Full'}}
   br

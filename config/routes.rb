@@ -15,7 +15,11 @@ Blog::Application.routes.draw do
     end
 
     resources :columns
-    resources :channels
+    resources :channels do
+      collection do
+        post 'add_column'
+      end
+    end
     resources :blogrolls
   end
   resources :articles,only: [:index,:show]

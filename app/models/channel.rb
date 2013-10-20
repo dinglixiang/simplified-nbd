@@ -1,5 +1,7 @@
 class Channel < ActiveRecord::Base
-  attr_accessible :link_str, :title
+  attr_accessible :link_str, :title,:tag_list
 
-  has_many :columns
+  acts_as_taggable
+
+  #has_many :columns
 end

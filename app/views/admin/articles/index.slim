@@ -7,7 +7,8 @@ table class="table table-bordered table-hover"
     tr
       th.index_number 序号
       th 标题
-      th 作者
+      th 发布人
+      th 归属栏目
       th 创建时间
       th 审核状态 
       th 操作
@@ -15,8 +16,9 @@ table class="table table-bordered table-hover"
     - @articles.each_with_index do |article,index|
       tr
         td = index = index+1 
-        td = link_to article.title,admin_article_path(article),title: "#{article.title}"                     
+        td = link_to article.title,admin_article_path(article),title: "#{article.title}"              
         td = article.publisher
+        td = article.column_list
         td = article.created_at().strftime('%Y-%m-%d %H:%M:%S')
         td = article.state
         td 

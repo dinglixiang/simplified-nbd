@@ -9,4 +9,6 @@ div id="newChannel" class="modal hide fade" tabindex="-1" role="dialog" aria-lab
         = f.text_field :title
         = f.label "URL链接"
         = f.text_field :link_str
+        = f.label "包含栏目"
+        = f.text_field :tag_list
         = f.submit "新建" ,class: "btn btn-primary"
