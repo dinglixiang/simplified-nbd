@@ -1,28 +1,30 @@
-- if @columns.empty?
-  p 您还未添加任何栏目，请先#{link_to "添加栏目",new_admin_column_path}
-- else
-  h4
-    i.icon-list-alt
-    span.text-info =t('system.channel')
-    a href="#newChannel" data-toggle="modal" class="pull-right" 添加频道
-  table class="table table-bordered table-hover"
-    thead
+h4
+  i.icon-list-alt
+  span.text-info =t('system.channel')
+  a href="#newChannel" data-toggle="modal" class="pull-right" 添加频道
+table class="table table-bordered table-hover"
+  thead
+    tr
+      th.index_number 序号
+      th 频道名称
+      th.span3 URL链接
+      th 包含栏目
+      th 操作
+  tbody
+    - @channels.each_with_index do |channel,index|
       tr
-        th.index_number 序号
-        th 频道名称
-        th.span3 URL链接
-        th 包含栏目
-        th 操作
-    tbody
-      - @channels.each_with_index do |channel,index|
-        tr
-          td = index=index+1
-          td = channel.title
-          td = channel.link_str
-          td = channel.tag_list
-          td 
-            = link_to "编辑", edit_admin_channel_path(id: channel.id)
-            ||
-            = link_to "删除", admin_channel_path(channel) , method: :delete, data: { confirm: '确定此操作吗？' }       
-  = render 'add_channel'
-  = render 'add_column'
+        td = index=index+1
+        td = channel.title
+        td = channel.link_str
+        td 
+          - if channel.columns.empty?
+            = "暂无"
+          - channel.columns.each do |column|
+            = column.title
+            '&nbsp;&nbsp;
+        td 
+          = link_to "编辑", edit_admin_channel_path(id: channel.id)
+          ||
+          = link_to "删除", admin_channel_path(channel) , method: :delete, data: { confirm: '确定此操作吗？' }       
+= render 'add_channel'
+= render 'add_column'

@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20131020015239) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "columns", :force => true do |t|
+    t.integer  "channel_id"
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

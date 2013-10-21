@@ -4,9 +4,19 @@ p align="center"
   |
   a> href="http://www.nbd.com.cn" http://www.nbd.com.cn
   | &nbsp;&nbsp;&nbsp;&nbsp;#{@article.created_at.strftime('%Y-%m-%d %H:%M')}
-  |
-  '&nbsp;&nbsp;&nbsp;&nbsp;发布人：#{@article.publisher}
 .contain 
   = @article.digest.html_safe
+  hr
+.contain
+  ul
+    p 
+      .pull-right 
+        '发布人：#{@article.publisher}
+      |
+      '归类于:&nbsp;&nbsp;
+      - split_column(@article.column_list.to_s).each do |a|
+        = link_to a,"#"
+        '&nbsp;&nbsp;
+     
 br
 br

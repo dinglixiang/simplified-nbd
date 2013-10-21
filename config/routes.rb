@@ -24,6 +24,7 @@ Blog::Application.routes.draw do
   end
   resources :articles,only: [:index,:show]
   resources :sessions
+  resources :columns
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -11,6 +11,7 @@ class Admin::ColumnsController < AdminController
 	end
 
 	def create
+		#render json: params[:column]
 		@column = Column.new(params[:column])
 		if @column.save
 			redirect_to admin_columns_path,notice: "添加成功."

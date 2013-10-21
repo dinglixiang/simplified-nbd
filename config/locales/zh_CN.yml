@@ -16,7 +16,7 @@ zh_CN:
       article:
         title: 标题
         digest: 摘要
-        tag_list: 归属栏目
+        column_list: 归属栏目
         publisher: 发布人
         state: 文章状态
       channel:
