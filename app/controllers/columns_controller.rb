@@ -6,7 +6,8 @@ class ColumnsController < ApplicationController
 
 	def show
 		#@article = Article.find(params[:id])
-		@articles = Article.all
+		#@articles = Article.all
 		@column = Column.find(params[:id])
+		@articles = @column.articles
 	end
 end
