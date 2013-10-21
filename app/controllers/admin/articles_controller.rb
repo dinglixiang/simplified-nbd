@@ -19,15 +19,23 @@ class Admin::ArticlesController < AdminController
 
 	def new
 		@article = Article.new
+		#@article.articlecolumnships.build(:article_id => @article.id).build_column
 	end
 
 	def show
 	end
 
 	def create
-		#render json: params[:article]
+		columns = Array.new
+		columns = params[:articlecolumnship][:column_id]
+		columns.shift
 		@article = Article.new(params[:article])
+    
 		if @article.save
+			columns.each {|c|
+    	    Articlecolumnship.create(article_id: @article.id,column_id: c.to_i) 	
+      }
+
 			redirect_to admin_articles_path,notice: "添加成功."
 		else
 			redirect_to admin_articles_path,alert: "添加失败."

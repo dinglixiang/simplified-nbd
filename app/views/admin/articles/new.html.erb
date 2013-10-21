@@ -1,0 +1,17 @@
+<%= form_for :article,url: admin_articles_path,as: :post do |f| %>
+  <%= f.label :title%>
+  <%= f.text_field :title%>
+  <%= f.label :publisher%>
+  <%= f.text_field :publisher%>
+  <%= fields_for :articlecolumnship do |ac| %>
+    <%= ac.label :column_id%>
+    <%= ac.select :column_id,Column.all.map { |c| [c.title, c.id] },
+						  {include_blank: false},
+						  { class: 'chosen-select',multiple: "true" }%>
+  <% end %>
+  <%= f.hidden_field :state%>
+  <%= f.label :digest%>
+  <%= f.cktext_area :digest%>
+  <br>
+  <%= f.submit "新建文章",class: "btn"%>
+<% end %>

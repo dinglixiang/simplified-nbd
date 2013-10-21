@@ -3,4 +3,6 @@ class Articlecolumnship < ActiveRecord::Base
 
   belongs_to :article
   belongs_to :column
+
+  #accepts_nested_attributes_for :column
 end

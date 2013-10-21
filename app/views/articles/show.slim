@@ -14,8 +14,8 @@ p align="center"
         '发布人：#{@article.publisher}
       |
       '归类于:&nbsp;&nbsp;
-      - split_column(@article.column_list.to_s).each do |a|
-        = link_to a,"#"
+      - @article.columns.each do |c|
+        = link_to c.title,column_path(c)
         '&nbsp;&nbsp;
      
 br

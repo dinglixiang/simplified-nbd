@@ -13,7 +13,10 @@ p align="center"
       .pull-right 
         '发布人：#{@article.publisher}
       |
-      '归类于:&nbsp;&nbsp;#{link_to @article.column_list,"#"}
+      '归类于:&nbsp;&nbsp;
+      - @article.columns.each do |c|
+        = link_to c.title,"#"
+        '&nbsp;&nbsp;
      
 br
 br

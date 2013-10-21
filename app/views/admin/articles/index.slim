@@ -18,7 +18,9 @@ table class="table table-bordered table-hover"
         td = index = index+1 
         td = link_to article.title,admin_article_path(article),title: "#{article.title}"              
         td = article.publisher
-        td = article.columns.to_s
+        td 
+           - article.columns.each do |c|
+             = c.title
         td = article.created_at().strftime('%Y-%m-%d %H:%M:%S')
         td = article.state
         td 
