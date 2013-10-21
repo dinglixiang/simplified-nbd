@@ -6,6 +6,9 @@ Blog::Application.routes.draw do
   namespace :admin do 
     root to: "home#index"
     resources :articles do
+      member do
+        get 'year'
+      end
       collection do
         get 'published'
         get 'banned'
@@ -23,6 +26,9 @@ Blog::Application.routes.draw do
     resources :blogrolls
   end
   resources :articles,only: [:index,:show]
+  #get '/articles/(:year)/(:id)' => 'articles#show'
+  #match "/articles/(:year)/(:id)" => "articles#show" 
+  #get 'articles/:id', to: 'articles#show',constraints: {id: /[A-Z][A-Z][0-9]+/}
   resources :sessions
   resources :columns
 

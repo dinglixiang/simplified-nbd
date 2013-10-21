@@ -11,6 +11,14 @@ zh_CN:
     column: 栏目
     channel: 频道
     blogroll: 友情链接
+  activerecord:
+    attributes:
+      article:
+        title: 标题
+        digest: 摘要
+        column_id: 归属栏目
+        publisher: 发布人
+        state: 文章状态
   simple_form:
     labels:
       article:

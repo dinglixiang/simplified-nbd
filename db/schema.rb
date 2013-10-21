@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131020015239) do
+ActiveRecord::Schema.define(:version => 20131021103910) do
+
+  create_table "articlecolumnships", :force => true do |t|
+    t.integer  "article_id"
+    t.integer  "column_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -20,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20131020015239) do
     t.string   "state",      :default => "draft"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
+    t.integer  "column_id"
   end
 
   create_table "blogrolls", :force => true do |t|
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20131020015239) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "article_id"
   end
 
   create_table "taggings", :force => true do |t|

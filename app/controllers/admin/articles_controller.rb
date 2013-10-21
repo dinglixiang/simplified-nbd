@@ -25,7 +25,7 @@ class Admin::ArticlesController < AdminController
 	end
 
 	def create
-		#render json: params[:article].remove(params[:article][:tag_list])
+		#render json: params[:article]
 		@article = Article.new(params[:article])
 		if @article.save
 			redirect_to admin_articles_path,notice: "添加成功."

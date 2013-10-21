@@ -1,8 +1,14 @@
-= simple_form_for @article,url: admin_articles_path(@article) do |f|
-  = f.input :title
-  = f.input :publisher
-  = f.input :column_list
-  = f.input :state,as: :hidden
-  = f.input :digest,:as => :ckeditor,:input_html => {:ckeditor => {:toolbar => 'Full'}}
+= form_for :article,url: admin_articles_path,as: :post do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.label :publisher
+  = f.text_field :publisher
+  = f.label :column_id
+  = f.select :column_id,Column.all.map { |c| [c.title, c.id] },
+						  {include_blank: false},
+						  { class: 'chosen-select',multiple: "true" }
+  = f.hidden_field :state
+  = f.label :digest
+  = f.cktext_area :digest
   br
-  = f.submit "保存到草稿箱",class: "btn"
+  = f.submit "新建文章",class: "btn"

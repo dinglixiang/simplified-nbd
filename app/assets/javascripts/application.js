@@ -14,14 +14,7 @@
 //= require ckeditor/init
 //= require jquery_ujs
 //= require chosen-jquery
+//= require demo
 //= require bootstrap
 //= require_tree .
 
-$(".chosen-select").chosen(
-	allow_single_deselect: true
-	search_contains: true,
-  disable_search_threshold: 10,
-  placeholder_text_multiple: "选择收件人(可多选)",
-  no_results_text: 'No results matched',
-  width: '100%'
-);
