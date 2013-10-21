@@ -12,6 +12,7 @@ class Article < ActiveRecord::Base
   scope :published,where(state: "published")
   scope :banned,where(state: "banned")
 
-  # attr_accessor :column_list
+
+  default_scope :order => 'created_at DESC'
 
 end
