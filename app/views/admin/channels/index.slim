@@ -25,6 +25,8 @@ table class="table table-bordered table-hover"
         td 
           = link_to "编辑", edit_admin_channel_path(id: channel.id)
           ||
-          = link_to "删除", admin_channel_path(channel) , method: :delete, data: { confirm: '确定此操作吗？' }       
+          = link_to "删除", admin_channel_path(channel) , method: :delete, data: { confirm: '确定此操作吗？' } 
+.pagination.pagination-centered
+  = paginate @channels      
 = render 'add_channel'
 = render 'add_column'

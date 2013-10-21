@@ -3,7 +3,7 @@ class Admin::ColumnsController < AdminController
 	before_filter :find_column,only: [:update,:edit,:destroy]
 	
 	def index
-		@columns = Column.all
+		@columns = Column.order(:id).page(params[:page]).per(10)
 	end
 
 	def new

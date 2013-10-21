@@ -11,3 +11,5 @@ hr
         p.articleMaterial_meta #{article.created_at.strftime('%Y-%m-%d %H:%M')}
         .articleMaterial_digest
           p  #{article.digest.truncate(600, separator: ' ').gsub(/<\/?.*?>/,"")}
+.pagination.pagination-centered.pagination-small
+  = paginate @articles

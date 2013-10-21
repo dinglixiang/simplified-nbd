@@ -13,6 +13,7 @@ gem 'slim'
 gem 'simple_form'
 gem 'acts-as-taggable-on'
 gem 'chosen-rails'
+gem 'kaminari'
 gem 'rb-readline', '~> 0.4.2'
 #gem 'libv8'
 

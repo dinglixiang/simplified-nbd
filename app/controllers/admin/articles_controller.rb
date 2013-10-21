@@ -4,17 +4,17 @@ class Admin::ArticlesController < AdminController
 
 	#draft articles
 	def index
-		@articles = Article.draft
+		@articles = Article.draft.page(params[:page]).per(10)
 	end
 
 	#published articles
 	def published
-		@articles = Article.published
+		@articles = Article.published.page(params[:page]).per(10)
 	end
 
 	#banned articles
   def banned
-  	@articles = Article.banned
+  	@articles = Article.banned.page(params[:page]).per(10)
   end
 
 	def new

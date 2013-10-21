@@ -22,4 +22,7 @@
           td = column.created_at().strftime('%Y-%m-%d %H:%M')
           td 
              = link_to "删除", admin_column_path(column) , method: :delete, data: { confirm: '确定此操作吗？' } 
+  .pagination.pagination-centered
+    = paginate @columns
   = render 'add_column'
+  

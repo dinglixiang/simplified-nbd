@@ -3,7 +3,7 @@ class Admin::ChannelsController < AdminController
 	before_filter :find_channel,only: [:edit,:update,:destroy]
 	
 	def index
-		@channels = Channel.all
+		@channels = Channel.order(:title).page(params[:page]).per(10)
 		@columns = Column.all
 		#render json: Channel.last.columns
 	end
