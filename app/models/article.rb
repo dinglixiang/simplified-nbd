@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
-  attr_accessible :digest, :publisher, :state, :title,:column_id
+  attr_accessible :digest, :publisher, :state, :title
+
 
   has_many :articlecolumnships
   has_many :columns,:through => :articlecolumnships
@@ -10,4 +11,5 @@ class Article < ActiveRecord::Base
   scope :draft,where(state: "draft")
   scope :published,where(state: "published")
   scope :banned,where(state: "banned")
+
 end
