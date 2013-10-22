@@ -7,7 +7,8 @@ table class="table table-bordered table-hover"
     tr
       th.index_number 序号
       th 标题
-      th 作者
+      th 发布人
+      th 归属栏目
       th 创建时间
       th 审核状态 
       th 操作
@@ -15,15 +16,21 @@ table class="table table-bordered table-hover"
     - @articles.each_with_index do |article,index|
       tr
         td = index = index+1 
-        td = link_to article.title,admin_article_path(article),title: "#{article.title}"                   
+        td = link_to article.title,admin_article_path(article),title: "#{article.title}"              
         td = article.publisher
+        td 
+           - article.columns.each do |c|
+             = c.title
+             '&nbsp;
         td = article.created_at().strftime('%Y-%m-%d %H:%M:%S')
         td = article.state
         td 
-           = link_to "发布",admin_articles_path(:id => article.id)
+           = link_to "发布",publish_admin_articles_path(:id => article.id)
            ||
            = link_to "禁止",ban_admin_articles_path(:id => article.id)
            ||
            = link_to "编辑",edit_admin_article_path(article)
            ||
            = link_to "删除", admin_article_path(article) , method: :delete, data: { confirm: '确定此操作吗？' } 
+.pagination.pagination-centered
+  = paginate @articles
