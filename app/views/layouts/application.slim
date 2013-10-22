@@ -12,9 +12,10 @@ html
       .innerCenter
         .ad_header
           .input-append
-            input class="span3" id="appendedInputButton" type="text"
-            button class="btn" type="button" placeholder="请输入关键词..." 搜索
-        a> class="logo-stock" href="#"
+            = form_tag search_index_path,:method => :get do
+              = text_field_tag :search,params[:search],class: "span3" ,id: "appendedInputButton"
+              = submit_tag "搜索",:title =>nil,class: "btn",placeholder: "请输入关键词..." 
+        a> class="logo-stock" href= root_path
         .nav1
           = render 'layouts/header'
     .wrapper

@@ -31,6 +31,7 @@ Blog::Application.routes.draw do
   #get 'articles/:id', to: 'articles#show',constraints: {id: /[A-Z][A-Z][0-9]+/}
   resources :sessions
   resources :columns,only: [:show]
+  resources :search,only: [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

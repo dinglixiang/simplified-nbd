@@ -13,4 +13,8 @@ class Article < ActiveRecord::Base
 
   default_scope :order => 'created_at DESC'
 
+  searchable do
+		text :title, :digest  	
+  end
+
 end
