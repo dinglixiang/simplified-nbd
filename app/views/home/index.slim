@@ -1,13 +1,14 @@
-.ntitle
-  span.brand
-    strong.text-info 股票
-br
-hr
-.story_bd
-  ul.articles 
-    - @articles.each do |article|
-      li.articleMaterial
-        h4 #{link_to article.title,article_path(id: article.id)}
-        p.articleMaterial_meta #{article.created_at.strftime('%Y-%m-%d %H:%M')}
-        .articleMaterial_digest
-          p  #{article.digest.truncate(600, separator: ' ').gsub(/<\/?.*?>/,"")}
+.main
+	.ntitle
+	  span.brand
+	    strong.text-info 股票
+	br
+	hr
+	.story_bd
+	  ul.articles 
+	    - @articles.each do |article|
+	      li.articleMaterial
+	        h4 #{link_to article.title,article_path(id: article.id)}
+	        p.articleMaterial_meta #{article.created_at.strftime('%Y-%m-%d %H:%M')}
+	        .articleMaterial_digest
+	          p  #{article.digest.truncate(600, separator: ' ').gsub(/<\/?.*?>/,"")}
