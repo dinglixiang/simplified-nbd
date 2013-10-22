@@ -14,6 +14,8 @@
 //= require ckeditor/init
 //= require jquery_ujs
 //= require chosen-jquery
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require demo
 //= require bootstrap
 //= require_tree .

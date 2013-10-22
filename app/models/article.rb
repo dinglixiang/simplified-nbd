@@ -3,10 +3,8 @@ class Article < ActiveRecord::Base
 
   has_many :articlecolumnships
   has_many :columns,:through => :articlecolumnships
-  #accepts_nested_attributes_for :articlecolumnship
 
-  #acts_as_taggable_on :columns
-  STATE = ["draft","published","banned"]
+  validates_presence_of :title,:digest,:publisher
   
   scope :draft,where(state: "draft")
   scope :published,where(state: "published")

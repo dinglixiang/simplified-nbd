@@ -30,7 +30,7 @@ Blog::Application.routes.draw do
   #match "/articles/(:year)/(:id)" => "articles#show" 
   #get 'articles/:id', to: 'articles#show',constraints: {id: /[A-Z][A-Z][0-9]+/}
   resources :sessions
-  resources :columns
+  resources :columns,only: [:show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

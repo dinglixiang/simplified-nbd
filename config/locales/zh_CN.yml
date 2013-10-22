@@ -19,6 +19,21 @@ zh_CN:
         column_id: 归属栏目
         publisher: 发布人
         state: 文章状态
+    errors:
+      models:
+        column:
+          attributes:
+            title:
+              blank: 必填项
+              presence: 必填项
+        channel:
+          attributes:
+            title:
+              blank: 必填项
+              presence: 必填项
+            link_str:
+              blank: 必填项
+              presence: 必填项
   simple_form:
     labels:
       article:

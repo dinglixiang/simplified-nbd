@@ -26,6 +26,7 @@ class Admin::ArticlesController < AdminController
 	end
 
 	def create
+		# render json: params[:article]
 		columns = Array.new
 		columns = params[:articlecolumnship][:column_id]
 		columns.shift

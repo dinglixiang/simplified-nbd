@@ -4,4 +4,6 @@ class Column < ActiveRecord::Base
  belongs_to :channel
  has_many :articlecolumnships
  has_many :articles,:through => :articlecolumnships
+
+ validates_presence_of :title
 end

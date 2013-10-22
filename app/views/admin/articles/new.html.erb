@@ -1,10 +1,10 @@
-<%= form_for :article,url: admin_articles_path,as: :post do |f| %>
+<%= form_for(@article,as: :article, :validate => true,url: admin_articles_path) do |f| %>
   <%= f.label :title%>
-  <%= f.text_field :title%>
+  <%= f.text_field :title, :validate => true%>
   <%= f.label :publisher%>
   <%= f.text_field :publisher%>
   <%= fields_for :articlecolumnship do |ac| %>
-    <%= ac.label :column_id%>
+    <%= ac.label "归属栏目"%>
     <%= ac.select :column_id,Column.all.map { |c| [c.title, c.id] },
 						  {include_blank: false},
 						  { class: 'chosen-select',multiple: "true" }%>

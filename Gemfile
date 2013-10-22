@@ -16,6 +16,8 @@ gem 'client_side_validations-simple_form'
 gem 'acts-as-taggable-on'
 gem 'chosen-rails'
 gem 'kaminari'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 gem 'rb-readline', '~> 0.4.2'
 #gem 'libv8'
 

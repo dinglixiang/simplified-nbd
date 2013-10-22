@@ -26,7 +26,7 @@ div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labell
     h3 id="myModalLabel" 添加友情链接
   div class="modal-body"
     .span4
-      = form_for :blogroll,url: admin_blogrolls_path,as: :post do |f|
+      = form_for(@blogroll,as: :blogroll,:validate => true,url: admin_blogrolls_path,as: :post) do |f|
         label for="title" 链接名称
         |
         = f.text_field :title

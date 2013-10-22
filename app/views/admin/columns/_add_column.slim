@@ -4,7 +4,7 @@ div id="newColumn" class="modal hide fade" tabindex="-1" role="dialog" aria-labe
     h3 id="myModalLabel" 添加栏目
   div class="modal-body"
     .span4
-      = form_for :column,url: admin_columns_path,as: :post do |f|
+      = form_for(@column,as: :column,:validate => true,url: admin_columns_path) do |f|
         = f.label "所属频道"
         = f.select :channel_id,Channel.all.map{|c| [c.title,c.id]}
         = f.label "栏目名称"
