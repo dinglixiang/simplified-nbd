@@ -11,6 +11,8 @@ gem 'mysql2'
 gem "ckeditor"
 gem 'slim'
 gem 'simple_form'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 gem 'acts-as-taggable-on'
 gem 'chosen-rails'
 gem 'kaminari'
