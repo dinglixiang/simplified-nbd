@@ -29,7 +29,9 @@ Blog::Application.routes.draw do
   #get '/articles/(:year)/(:id)' => 'articles#show'
   #match "/articles/(:year)/(:id)" => "articles#show" 
   #get 'articles/:id', to: 'articles#show',constraints: {id: /[A-Z][A-Z][0-9]+/}
-  resources :sessions
+  resources :sessions,only: [:new,:create,:destroy]
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   resources :columns,only: [:show]
   resources :search,only: [:index]
 

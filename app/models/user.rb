@@ -13,10 +13,9 @@ class User < ActiveRecord::Base
 	  generate_password(pass)
   end
 
-  def self.authentication(login,password)
-    @user=User.find_by_login(login)
-    if @user && Digest::SHA256.hexdigest(password + @user.salt)==@user.hashed_password
-      return @user
+  def authentication(user,password)
+    if Digest::SHA256.hexdigest(password + user.salt)==user.hashed_password
+      return true
     end
     false
   end

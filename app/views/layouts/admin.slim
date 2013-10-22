@@ -25,7 +25,8 @@ html
                 li = link_to '友情链接',admin_blogrolls_path
               ul class="nav pull-right" 
                 li = link_to '写文章',new_admin_article_path
-                li = link_to '网站首页',root_path                  
+                li = link_to '网站首页',root_path
+                li = link_to '退出',signout_path,:method => 'delete',:class => 'pull-right'                  
     .container style="margin-top:60px;"
       .container-fluid
         .row-fluid

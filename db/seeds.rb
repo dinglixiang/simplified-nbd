@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(login: "admin",password: "123456")
 
 c1=Channel.create(title: '首页',link_str: 'http://www.nbd.com.cn')
 c2=Channel.create(title: '股票',link_str: 'http://stock.nbd.com.cn')
