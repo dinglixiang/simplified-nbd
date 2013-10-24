@@ -1,16 +1,36 @@
-simplified nbd for my written test project.
+##Simplified nbd for my written test project.
+
+--------
+
+Sunspot need **JVM**,so your PC must install JVM.
+
+And then ,you can use fulltext by following step.
 
 start the packaged Solr distribution with:
 
     bundle exec rake sunspot:solr:start 
 
-Initialize data by following command:
+--------
+
+Before run the following commands,you must configure you mysql to username with 'root' and  password with '123456'.
+
+Of course,you also can modify all username and password in the config/database.yml file.
+
+####1.Create Database:
+
+    rake db:create
+
+####2. Execute migrations:
+    
+    rake db:migrate
+
+####3. Initialize data:
 
     rake db:seed
 
-User: 
+####4. Admin Login: 
 
-> login: admin ,password: 123456
+> username: admin ,password: 123456
 
-All articles initial state is 'draft'.
+All articles initial state is **draft**.
 
