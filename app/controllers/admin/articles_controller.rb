@@ -30,6 +30,7 @@ class Admin::ArticlesController < AdminController
 		columns = Array.new
 		columns = params[:articlecolumnship][:column_id]
 		columns.shift
+		params[:articlecolumnship][:column_id] = nil
 		@article = Article.new(params[:article])
     
 		if @article.save
@@ -44,15 +45,27 @@ class Admin::ArticlesController < AdminController
 	end
 
 	def edit
-		@columns = @article.columns
 	end
 
 	def update
+				
+		columns = Array.new
+		columns = params[:articlecolumnship][:column_id]
+		columns.shift
+		if !columns.empty?	
+			@articlecolumnships=@article.articlecolumnships
+			@articlecolumnships.each {|a| a.delete}
+			columns.each {|c|
+	    	Articlecolumnship.create(article_id: @article.id,column_id: c.to_i) ;  	
+	     }
+	  end
+
 		if @article.update_attributes(params[:article])
-			redirect_to admin_articles_path,notice: "更新成功."
+			 redirect_to admin_articles_path,notice: "更新成功."
 		else
-			redirect_to admin_articles_path,alert: "更新失败."
+			 redirect_to admin_articles_path,alert: "更新失败."
 		end
+
 	end
 
 	def destroy

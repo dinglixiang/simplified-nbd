@@ -25,8 +25,6 @@ table class="table table-bordered table-hover"
         td = article.created_at().strftime('%Y-%m-%d %H:%M:%S')
         td = article.state
         td 
-           = link_to "发布",publish_admin_articles_path(:id => article.id)
-           ||
            = link_to "禁止",ban_admin_articles_path(:id => article.id)
            ||
            = link_to "编辑",edit_admin_article_path(article)

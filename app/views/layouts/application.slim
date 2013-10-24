@@ -13,8 +13,8 @@ html
         .ad_header
           .input-append
             = form_tag search_index_path,:method => :get do
-              = text_field_tag :search,params[:search],class: "span3" ,id: "appendedInputButton"
-              = submit_tag "搜索",:title =>nil,class: "btn",placeholder: "请输入关键词..." 
+              = text_field_tag :search,params[:search],class: "span3" ,id: "appendedInputButton",placeholder: "请输入关键词..." 
+              = submit_tag "搜索",:title =>nil,class: "btn"
         a> class="logo-stock" href= root_path title="股票频道首页"
         .nav1
           = render 'layouts/header'
