@@ -44,6 +44,7 @@ class Admin::ArticlesController < AdminController
 	end
 
 	def edit
+		@columns = @article.columns
 	end
 
 	def update
