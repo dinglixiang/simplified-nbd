@@ -9,7 +9,7 @@
   </p>
   <p>
   <%= fields_for :articlecolumnship do |ac| %>
-    <%= ac.label "归属栏目"%>
+    <%= ac.label "*归属栏目"%>
     <%= ac.select :column_id,Column.all.map { |c| [c.title, c.id] },
 						  {include_blank: false},
 						  { class: 'chosen-select',multiple: "true" }%>

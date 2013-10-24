@@ -1,5 +1,7 @@
-= simple_form_for @channel,url: admin_channels_path(@channel) do |f|
-  = f.input :title
-  = f.input :link_str
+= form_for @channel,as: :channel,:validate => true,url: admin_channels_path(@channel) do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.label :link_str
+  = f.text_field :link_str
   br
   = f.submit "新建频道",class: "btn"

@@ -5,6 +5,8 @@
 	br
 	hr
 	.story_bd
+	  .text-info style="margin-left:20%;font-size:16px;"
+	    = t('system.nofind') unless @articles.present?
 	  ul.articles 
 	    - @articles.each do |article|
 	      li.articleMaterial

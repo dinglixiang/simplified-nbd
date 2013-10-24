@@ -2,7 +2,7 @@
   .nav_item
     dl
 	    dt
-	      a> href="#{channel.link_str}" #{channel.title}
+	      a> href="#{channel.link_str}" target="_blank" #{channel.title} 
 	      - channel.columns.each do |i|
 	        dd
 	          = link_to i.title,column_path(i)

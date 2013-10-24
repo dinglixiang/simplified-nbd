@@ -4,7 +4,7 @@ div id="newChannel" class="modal hide fade" tabindex="-1" role="dialog" aria-lab
     h3 id="myModalLabel" 添加频道
   div class="modal-body"
     .span4
-      = form_for :channel,url: admin_channels_path,as: :post do |f|
+      = form_for @channel,as: :channel,:validate => true,url: admin_channels_path,as: :post do |f|
         = f.label "频道名称"
         = f.text_field :title
         = f.label "URL链接"
