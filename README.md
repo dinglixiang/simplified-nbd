@@ -12,7 +12,7 @@ start the packaged Solr distribution with:
 
 --------
 
-Before run the following commands,you must configure you mysql to username with __root__ and  password with __123456__.
+Before run the following commands,you must configure you mysql to username with **root** and  password with **123456**.
 
 Of course,you also can modify all username and password in the config/database.yml file.
 
@@ -32,5 +32,5 @@ Of course,you also can modify all username and password in the config/database.y
 
 > username: admin ,password: 123456
 
-All articles initial state is ** draft **.
+All articles initial state is **draft**.
 
