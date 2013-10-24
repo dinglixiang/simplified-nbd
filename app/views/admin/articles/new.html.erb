@@ -1,17 +1,25 @@
 <%= form_for(@article,as: :article, :validate => true,url: admin_articles_path) do |f| %>
+  <p>
   <%= f.label :title%>
   <%= f.text_field :title, :validate => true%>
+  </p>
+  <p>
   <%= f.label :publisher%>
   <%= f.text_field :publisher%>
+  </p>
+  <p>
   <%= fields_for :articlecolumnship do |ac| %>
     <%= ac.label "归属栏目"%>
     <%= ac.select :column_id,Column.all.map { |c| [c.title, c.id] },
 						  {include_blank: false},
 						  { class: 'chosen-select',multiple: "true" }%>
   <% end %>
+  </p>
   <%= f.hidden_field :state%>
+  <p>
   <%= f.label :digest%>
   <%= f.cktext_area :digest%>
+  </p>
   <br>
   <%= f.submit "新建文章",class: "btn"%>
 <% end %>

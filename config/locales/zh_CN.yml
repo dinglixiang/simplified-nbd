@@ -26,6 +26,17 @@ zh_CN:
             title:
               blank: 必填项
               presence: 必填项
+        article:
+          attributes:
+            title:
+              blank: 必填项
+              presence: 必填项
+            digest:
+              blank: 必填项
+              presence: 必填项
+            publisher:
+              blank: 必填项
+              presence: 必填项
         channel:
           attributes:
             title:

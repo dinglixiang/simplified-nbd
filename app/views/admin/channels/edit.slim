@@ -1,6 +1,5 @@
 = simple_form_for @channel,url: admin_channel_path(@channel) do |f|
   = f.input :title
   = f.input :link_str
-  = f.input :tag_list
   br
   = f.submit "更新",class: "btn"

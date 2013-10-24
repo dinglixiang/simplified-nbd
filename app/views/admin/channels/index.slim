@@ -15,7 +15,7 @@ table class="table table-bordered table-hover"
       tr
         td = index=index+1
         td = channel.title
-        td = channel.link_str
+        td = link_to channel.link_str,channel.link_str,target: "_blank"
         td 
           - if channel.columns.empty?
             = "暂无"

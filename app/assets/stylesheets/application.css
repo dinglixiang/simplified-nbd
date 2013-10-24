@@ -12,3 +12,19 @@
  *= require chosen
  *= require_tree .
  */
+
+ .field_with_errors {
+ 	display: inline;
+ }
+
+ .field_with_errors .message {
+ 	color: #D00;
+ 	font-size: 14px;
+
+ }
+ .pull-errors {
+ 	  /*margin-left: 400px;*/
+ 	  float: right;
+ 	  margin-right: 70%;
+ }
+
